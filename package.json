@@ -1,6 +1,6 @@
 {
   "name": "official-lumx",
-  "version": "1.7.35",
+  "version": "1.9.2",
   "description": "The first responsive front-end framework based on AngularJS & Google Material Design specifications",
   "keywords": [
     "AngularJS",
@@ -30,7 +30,7 @@
     "Pierre Dupuis <pierre@lumapps.com> (https://github.com/pidupuis)",
     "Philippe Bouchon <philippe@lumapps.com> (https://github.com/philippeBchn)"
   ],
-  "private": true,
+  "private": false,
   "main": "./dist/lumx.js",
   "repository": {
     "type": "git",
@@ -41,7 +41,7 @@
     "build": "webpack --config webpack/webpack.prod.js && MINIFY=true GENERATE_PACKAGE=true webpack --config webpack/webpack.prod.js",
     "build:demo": "webpack --config webpack/webpack.demo.js",
     "prepublish-package": "npm run build",
-    "publish-package": "cd dist && npm publish --access=public && cd -",
+    "publish-package": "cp package.json dist/; cd dist; npm publish --access=public; cd ..",
     "start": "nodemon --watch webpack --ignore webpack/.eslintrc.js node_modules/.bin/webpack-dev-server -- --config webpack/webpack.dev.js --hot",
     "webpack-defaults": "webpack-defaults"
   },
